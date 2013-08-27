@@ -1,0 +1,38 @@
+@import "bootstrap";
+
+.center {
+	text-align: center;
+}
+
+footer ul {
+	float: right;
+}
+
+footer ul li {
+	float: left;
+	margin-left: 10px;
+	list-style: none;
+}
+
+footer p {
+	float: left;
+}
+
+footer {
+	border-top: 1px solid #eaeaea;
+}
+
+.nav {
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
+.logo {
+	float: left;
+	padding-top: 10px;
+	display: block;
+}
+
+body {
+	//margin-top: 50px;
+}
