@@ -1,0 +1,13 @@
+<%= provide(:title, "Edit") %>
+<div class="row">
+	<div class="span6 offset3">
+		<h1>Sign Up</h1>
+		<%= form_for(@user) do |f| %>
+			<%= render 'shared/fields', f: f %>
+			<br>
+			<%= f.submit "Update", class: "btn btn-large btn-primary" %>
+		<% end %>
+		<%= gravatar_for(@user, size: 50) %>
+		<%= link_to "change", "http://www.gravatar.com/emails" %>
+	</div>
+</div>
