@@ -43,7 +43,28 @@ class UsersController < ApplicationController
     @users = User.all.paginate(page: params[:page])
   end
 
-  
+  def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.followed_users.paginate(page: params[:page])
+    @users_plain = @user.followed_users
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    @users_plain = @user.followers
+    render 'show_follow'
+  end
+
+  def timeline
+    @user = User.find(params[:id])
+    @timeline = @user.feed.paginate(page: params[:page])
+    render 'timeline'
+  end
+
   private
 
   	def user_params
