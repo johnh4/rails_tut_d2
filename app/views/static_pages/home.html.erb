@@ -1,8 +1,26 @@
 <%= provide(:title, "Home") %>
-<div class="center hero-unit">
-	<h1>Welcome to the <%= link_to "Rails Drills App", "http://www.railstutorial.org" %>, Part 2</h1>
 
-	<h3>This is the home page for the ruby on rails tutorial, drilled.</h3>
+<% if signed_in? %>
+	<div class="row">
+		<aside class="span4">
+			<section>
+				<%= render 'shared/user_info' %>
+			</section>
+			<section>
+				<%= render 'shared/micropost_form' %>
+			</section>
+		</aside>
+		<div class="span8">
+			<h3>Micropost Feed</h3>
+			<%= render 'shared/feed' %>
+		</div>
+	</div>	
+<% else %>
+	<div class="center hero-unit">
+		<h1>Welcome to the <%= link_to "Rails Drills App", "http://www.railstutorial.org" %>, Part 2</h1>
 
-	<%= link_to "Sign Up Now!", signup_path, class: "btn btn-large btn-primary" %>
-</div>
+		<h3>This is the home page for the ruby on rails tutorial, drilled.</h3>
+
+		<%= link_to "Sign Up Now!", signup_path, class: "btn btn-large btn-primary" %>
+	</div>
+<% end %>

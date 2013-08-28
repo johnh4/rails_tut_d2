@@ -1,5 +1,13 @@
 @import "bootstrap";
 
+.timestamp {
+	font-size: 12px;
+	color: #777;
+}
+aside span, span.content {
+	display: block;
+}
+
 .center {
 	text-align: center;
 }
