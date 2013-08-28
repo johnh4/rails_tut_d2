@@ -1,4 +1,5 @@
 RailsTutD2::Application.routes.draw do
+  get "sessions/new"
   get "users/show"
   get "users/index"
 
@@ -7,10 +8,13 @@ RailsTutD2::Application.routes.draw do
   get "/contact", to: "static_pages#contact", as: "/contact"
 
   get "/signup", to: "users#new", as: "/signup"
+  get "/signin", to: "sessions#new", as: '/signin'
+  delete "/signout", to: "sessions#destroy", as: "/signout"  
 
   root "static_pages#home"
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
